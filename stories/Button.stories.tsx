@@ -9,5 +9,17 @@ const meta: Meta = {
 
 export default meta;
 
-export const Filled = () => <Button variant="filled">CLICK ME</Button>;
-export const Outline = () => <Button variant="outline">CLICK ME</Button>;
+const Template: Story<Props> = args => <Button {...args} />;
+
+export const Filled = Template.bind({});
+export const Outline = Template.bind({});
+
+Filled.args = {
+  variant: 'filled',
+  children: 'Button',
+};
+
+Outline.args = {
+  variant: 'outline',
+  children: 'Button',
+};

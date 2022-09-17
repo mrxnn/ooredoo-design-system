@@ -9,6 +9,11 @@ const meta: Meta = {
 
 export default meta;
 
-export const Default = () => (
-  <SearchBox placeholder="Search" buttonText="Search" className="w-60" />
-);
+const Template: Story<Props> = args => <SearchBox {...args} className="w-60" />;
+
+export const Default = Template.bind({});
+
+Default.args = {
+  placeholder: 'Search',
+  buttonText: 'Search',
+};
