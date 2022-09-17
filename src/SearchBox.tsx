@@ -6,6 +6,7 @@ export interface Props {
   buttonText: string;
   className?: string;
   onClick: (value: string) => void;
+  clearOnSubmit?: boolean;
 }
 
 export const SearchBox = ({
@@ -13,6 +14,7 @@ export const SearchBox = ({
   buttonText,
   className,
   onClick,
+  clearOnSubmit = false,
 }: Props) => {
   let searchRef = useRef<HTMLInputElement>(null);
 
@@ -27,7 +29,10 @@ export const SearchBox = ({
       <Button
         variant="filled"
         className="-translate-x-10"
-        onClick={() => onClick(searchRef.current?.value || '')}
+        onClick={() => {
+          onClick(searchRef.current?.value || '');
+          clearOnSubmit && (searchRef.current!.value = '');
+        }}
       >
         {buttonText}
       </Button>
