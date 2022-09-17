@@ -10,8 +10,8 @@ export interface Props {
 }
 
 export const SearchBox = ({
-  placeholder,
-  buttonText,
+  placeholder = 'Search',
+  buttonText = 'Search',
   className,
   onClick,
   clearOnSubmit = false,
