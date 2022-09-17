@@ -11,7 +11,12 @@ let styles = {
   outline: 'px-8 h-10 rounded-full border border-primary-red text-primary-red',
 };
 
-export const Button = ({ variant, children, className, ...props }: Props) => {
+export const Button = ({
+  variant = 'filled',
+  children,
+  className,
+  ...props
+}: Props) => {
   return (
     <button className={`${styles[variant]} ${className}`} {...props}>
       {children}
