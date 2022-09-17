@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { SearchBox, Props } from '../src/SearchBox';
+import { SearchBox, Props } from '../src/components/SearchBox';
 
 const meta: Meta = {
   title: 'SearchBox',
