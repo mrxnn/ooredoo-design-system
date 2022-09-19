@@ -1,16 +1,17 @@
 import React from 'react';
-import logo from '../../static/icons/logo.png';
 import Link from 'next/link';
+import logo from '../../static/icons/logo.png';
 import { Button } from '../tokens/Button';
 import { SearchBox } from './SearchBox';
 
 export interface Props {
   onSearch: (value: string) => void;
+  className?: string;
 }
 
-export const Navbar = ({ onSearch }: Props) => {
+export const Navbar = ({ onSearch, className }: Props) => {
   return (
-    <nav className=" space-y-8 max-w-[1440px] mx-auto py-5 px-20">
+    <nav className={`space-y-8 max-w-7xl mx-auto py-5 ${className}`}>
       {/* first row */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-x-20">
@@ -28,14 +29,13 @@ export const Navbar = ({ onSearch }: Props) => {
           </ul>
         </div>
         <div className="flex items-center gap-x-10">
-          <Button variant="outline" className="rounded-lg">
+          <Button variant="outline" className="rounded-lg px-4">
             My Ooredoo
           </Button>
-          <p>E Strom</p>
-          <p>Partners</p>
+          <Link href="/e-strom">E Strom</Link>
+          <Link href="/partners">Partners</Link>
         </div>
       </div>
-
       {/* second row */}
       <div className="flex justify-end">
         <SearchBox
