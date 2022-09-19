@@ -9,8 +9,8 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
 }
 
 let styles = {
-  filled: 'rounded-lg border-[1px] bg-primary-red text-white',
-  outline: 'rounded-lg border-[1px] border-primary-red text-primary-red',
+  filled: 'rounded-[48px] border-[1px] bg-primary-red text-white ',
+  outline: 'rounded-[48px] border-[1px] border-primary-cherry text-primary-red',
 };
 
 let sizes = {
@@ -29,7 +29,7 @@ export const Button = ({
 }: Props) => {
   return (
     <button
-      className={`${styles[variant]} ${sizes[size]} ${className}`}
+      className={`font-rubik flex justify-center place-items-center leading-[17px] font-semibold hover:opacity-80 ${styles[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {icon}

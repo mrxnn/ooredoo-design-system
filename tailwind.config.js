@@ -7,14 +7,14 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Rubik', ...fontFamily.sans],
+        rubik: 'Rubik',
+        notosans: 'Noto Sans',
+        outfit: 'Outfit',
       },
       colors: {
         primary: {
           red: '#ED1C24',
-        },
-        cherry: {
-          100: '#ED1C24',
-          200: '#D6001C',
+          cherry: '#D6001C',
         },
         source: {
           fb: '#1877F2',
@@ -22,11 +22,6 @@ module.exports = {
         },
         ash: { 100: '#CFCFCF', 200: '#EEEEEE' },
         rose: '#FF585D',
-      },
-      fontFamily: {
-        rubik: 'Rubik',
-        NotoSans: 'Noto Sans',
-        outfit: 'Outfit',
       },
     },
   },
