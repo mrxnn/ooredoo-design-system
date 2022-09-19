@@ -10,7 +10,7 @@ export interface Props {
 
 export const Navbar = ({ onSearch }: Props) => {
   return (
-    <nav className=" space-y-5">
+    <nav className=" space-y-8 max-w-[1440px] mx-auto py-5 px-20">
       {/* first row */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-x-20">
