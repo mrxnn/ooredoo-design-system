@@ -18,6 +18,7 @@ const Template: Story<Props> = args => <Button {...args} />;
 export const Filled = Template.bind({});
 export const Outline = Template.bind({});
 export const Icon = Template.bind({});
+export const Disabled = Template.bind({});
 
 Filled.args = {
   variant: 'filled',
@@ -36,4 +37,11 @@ Icon.args = {
   size: 'md',
   children: 'Button',
   icon: <StarIcon />,
+};
+
+Disabled.args = {
+  variant: 'filled',
+  size: 'md',
+  children: 'Button',
+  disabled: true,
 };
