@@ -29,7 +29,7 @@ export const Navbar = ({ onSearch, className }: Props) => {
           </ul>
         </div>
         <div className="flex items-center gap-x-10">
-          <Button variant="outline" className="rounded-lg px-4">
+          <Button size="md" variant="outline" className="rounded-lg px-4">
             My Ooredoo
           </Button>
           <Link href="/e-strom">E Strom</Link>
@@ -44,7 +44,9 @@ export const Navbar = ({ onSearch, className }: Props) => {
           onClick={onSearch}
           className="translate-x-4"
         />
-        <Button variant="outline">ENG</Button>
+        <Button size="md" variant="outline">
+          ENG
+        </Button>
       </div>
     </nav>
   );
