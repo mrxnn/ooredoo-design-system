@@ -8,6 +8,9 @@ const meta: Meta = {
   component: Button,
   argTypes: {
     onClick: { action: 'clicked' },
+    className: {
+      defaultValue: 'px-8 py-2',
+    },
   },
 };
 
@@ -22,12 +25,12 @@ export const Disabled = Template.bind({});
 
 Filled.args = {
   variant: 'filled',
-  children: 'Button',
+  children: 'BUTTON',
 };
 
 Outline.args = {
   variant: 'outline',
-  children: 'Button',
+  children: 'BUTTON',
 };
 
 Icon.args = {
