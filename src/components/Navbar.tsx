@@ -8,34 +8,29 @@ import { StarIcon } from '../assets/Icons';
 export interface Props {
   onSearch: (value: string) => void;
   className?: string;
+  activeHref?: string;
 }
 
-export const Navbar = ({ onSearch, className }: Props) => (
+export const Navbar = ({ onSearch, className, activeHref }: Props) => (
   <nav className={`max-w-7xl space-y-10 mx-auto ${className}`}>
     <div className="flex h-[80px] items-end">
       <img src={logo} alt="Logo" className="-translate-y-[30%]" />
       <ul className="flex ml-28 items-center self-stretch gap-x-5 font-medium text-[22px]">
-        <li className="rounded-b-md h-full flex justify-center items-end transition-colors hover:bg-primary-red hover:text-white">
-          <Link href="/personal">
-            <a className="h-full px-4 flex justify-center items-end pb-3">
-              Personal
-            </a>
-          </Link>
-        </li>
-        <li className="rounded-b-md h-full flex justify-center items-end transition-colors hover:bg-primary-red hover:text-white">
-          <Link href="/business">
-            <a className="h-full px-4 flex justify-center items-end pb-3">
-              Business
-            </a>
-          </Link>
-        </li>
-        <li className="rounded-b-md h-full flex justify-center items-end transition-colors hover:bg-primary-red hover:text-white">
-          <Link href="/aboutus">
-            <a className="h-full px-4 flex justify-center items-end pb-3">
-              About Us
-            </a>
-          </Link>
-        </li>
+        <Href
+          text="Personal"
+          href="personal"
+          isActive={activeHref === 'personal'}
+        />
+        <Href
+          text="Business"
+          href="business"
+          isActive={activeHref === 'business'}
+        />
+        <Href
+          text="About Us"
+          href="about_us"
+          isActive={activeHref === 'about_us'}
+        />
       </ul>
       <div className="flex items-center gap-x-10 ml-auto">
         <Button
@@ -66,3 +61,25 @@ export const Navbar = ({ onSearch, className }: Props) => (
     </div>
   </nav>
 );
+
+const Href = ({
+  text,
+  href,
+  isActive,
+}: {
+  text: string;
+  href: string;
+  isActive: boolean;
+}) => {
+  return (
+    <li
+      className={`rounded-b-md h-full flex justify-center items-end transition-colors ${
+        isActive ? 'bg-primary-red text-white' : 'hover:bg-primary-cherry/10'
+      }`}
+    >
+      <Link href={href}>
+        <a className="h-full px-4 flex justify-center items-end pb-3">{text}</a>
+      </Link>
+    </li>
+  );
+};
