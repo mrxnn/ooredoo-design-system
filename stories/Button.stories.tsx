@@ -9,7 +9,7 @@ const meta: Meta = {
   argTypes: {
     onClick: { action: 'clicked' },
     className: {
-      defaultValue: 'px-8 py-2',
+      defaultValue: 'px-8 py-2 rounded-full',
     },
   },
 };
@@ -41,6 +41,6 @@ Icon.args = {
 
 Disabled.args = {
   variant: 'filled',
-  children: 'Button',
+  children: 'BUTTON',
   disabled: true,
 };
