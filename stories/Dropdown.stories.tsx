@@ -4,7 +4,7 @@ import { Dropdown, Props } from '../src/tokens/Dropdown';
 import { ChevronIcon } from '../src/assets/Icons';
 
 const meta: Meta = {
-  title: 'Dropdown',
+  title: 'design tokens/Dropdown',
   component: Dropdown,
   argTypes: {
     onClick: { action: 'clicked' },

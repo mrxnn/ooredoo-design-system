@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import { Navbar, Props } from '../src/components/Navbar';
 
 const meta: Meta = {
-  title: 'Navbar',
+  title: 'components/Navbar',
   component: Navbar,
 };
 

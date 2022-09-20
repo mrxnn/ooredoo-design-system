@@ -36,7 +36,7 @@ export const Navbar = ({ onSearch, className, activeHref }: Props) => (
         <Button
           icon={<StarIcon />}
           variant="outline"
-          className="rounded-md px-4 py-2"
+          className="rounded-md px-4 py-1.5"
         >
           <div className="flex flex-col leading-none items-start font-medium">
             <span>My</span>

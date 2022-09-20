@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import { UsageCard, Props } from '../src/components/UsageCard';
 
 const meta: Meta = {
-  title: 'UsageCard',
+  title: 'components/UsageCard',
   component: UsageCard,
 };
 

@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import { VoiceBundle, Props } from '../src/components/VoiceBundle';
 
 const meta: Meta = {
-  title: 'VoiceBundle',
+  title: 'components/VoiceBundle',
   component: VoiceBundle,
 };
 

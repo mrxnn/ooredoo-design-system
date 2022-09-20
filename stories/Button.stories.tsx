@@ -4,7 +4,7 @@ import { Button, Props } from '../src/tokens/Button';
 import { StarIcon } from '../src/assets/Icons';
 
 const meta: Meta = {
-  title: 'Button',
+  title: 'design tokens/Button',
   component: Button,
   argTypes: {
     onClick: { action: 'clicked' },
