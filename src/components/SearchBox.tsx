@@ -24,11 +24,11 @@ export const SearchBox = ({
         ref={searchRef}
         type="text"
         placeholder={placeholder}
-        className="border rounded-full flex-1 bg-gray-100 focus:outline-none pl-4 pr-12"
+        className="border rounded-full flex-1 bg-gray-100 focus:outline-none pl-4"
       />
       <Button
         variant="filled"
-        className="-translate-x-10 py-2.5 px-6"
+        className="-translate-x-10 rounded-3xl leading-[17px] font-semibold px-[23px] py-[12px]"
         onClick={() => {
           onClick(searchRef.current?.value || '');
           clearOnSubmit && (searchRef.current!.value = '');

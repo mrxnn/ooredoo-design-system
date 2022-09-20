@@ -31,13 +31,11 @@ export const Navbar = ({ onSearch, className }: Props) => {
         <div className="flex items-center gap-x-10">
           <Button
             variant="outline"
-            className="rounded-lg px-4 py-2 flex items-center gap-x-2"
+            className="rounded-[5px] px-4 py-1.5 font-medium text-left"
           >
-            <div className="w-5 aspect-square rounded-md bg-primary-red"></div>
-            <div className="flex flex-col leading-none items-start">
-              <span>My</span>
-              <span>Ooredoo</span>
-            </div>
+            My
+            <br />
+            Ooreedoo
           </Button>
           <Link href="/e-strom">E Strom</Link>
           <Link href="/partners">Partners</Link>
@@ -51,7 +49,7 @@ export const Navbar = ({ onSearch, className }: Props) => {
           onClick={onSearch}
           className="translate-x-4"
         />
-        <Button variant="outline" className="px-5">
+        <Button variant="outline" className="px-2 py-2">
           ENG
         </Button>
       </div>
