@@ -30,7 +30,7 @@ export const Button = ({
 }: Props) => {
   return (
     <button
-      className={`font-rubik flex justify-center place-items-center leading-[17px] font-semibold hover:opacity-80  disabled:bg-ash-100  disabled:text-ash-200 disabled:border-ash-200 ${styles[variant]} ${sizes[size]} ${className}`}
+      className={`text-sm flex justify-center place-items-center leading-[17px] font-semibold hover:opacity-80  disabled:bg-ash-100  disabled:text-ash-200 disabled:border-ash-200 ${styles[variant]} ${sizes[size]} ${className}`}
       {...props}
     >
       {icon}
