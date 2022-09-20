@@ -7,7 +7,6 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Rubik', ...fontFamily.sans],
-        rubik: 'Rubik',
         notosans: 'Noto Sans',
         outfit: 'Outfit',
       },

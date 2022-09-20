@@ -22,26 +22,22 @@ export const Disabled = Template.bind({});
 
 Filled.args = {
   variant: 'filled',
-  size: 'md',
   children: 'Button',
 };
 
 Outline.args = {
   variant: 'outline',
-  size: 'md',
   children: 'Button',
 };
 
 Icon.args = {
   variant: 'outline',
-  size: 'md',
   children: 'Button',
   icon: <StarIcon />,
 };
 
 Disabled.args = {
   variant: 'filled',
-  size: 'md',
   children: 'Button',
   disabled: true,
 };

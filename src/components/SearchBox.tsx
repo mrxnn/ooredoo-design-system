@@ -28,8 +28,7 @@ export const SearchBox = ({
       />
       <Button
         variant="filled"
-        size="sm"
-        className="-translate-x-10 rounded-3xl font-rubik leading-[17px] font-semibold"
+        className="-translate-x-10 rounded-3xl leading-[17px] font-semibold px-[23px] py-[12px]"
         onClick={() => {
           onClick(searchRef.current?.value || '');
           clearOnSubmit && (searchRef.current!.value = '');
