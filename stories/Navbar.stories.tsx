@@ -12,4 +12,6 @@ export default meta;
 const Template: Story<Props> = args => <Navbar {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  className: 'border border-black/10 rounded-lg',
+};
