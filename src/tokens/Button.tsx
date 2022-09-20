@@ -7,8 +7,8 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
 }
 
 let styles = {
-  filled: 'px-8 h-10 rounded-full bg-primary-red text-white',
-  outline: 'px-8 h-10 rounded-full border border-primary-red text-primary-red',
+  filled: 'rounded-full bg-primary-red text-white',
+  outline: 'rounded-full border border-primary-red text-primary-red',
 };
 
 export const Button = ({
