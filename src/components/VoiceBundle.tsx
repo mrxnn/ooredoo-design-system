@@ -20,7 +20,6 @@ export interface Props {
   icon: ReactElement;
   title: string;
   amount: string;
-  color: string;
   features: Feature[];
   className?: string;
 }
@@ -29,7 +28,6 @@ export const VoiceBundle = ({
   icon,
   title,
   amount,
-  color,
   features,
   className,
 }: Props) => {
