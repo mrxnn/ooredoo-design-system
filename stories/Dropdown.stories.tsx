@@ -17,7 +17,7 @@ const Template: Story<Props> = args => <Dropdown {...args} />;
 
 export const Filled = Template.bind({});
 export const Outline = Template.bind({});
-export const FlagIcon = Template.bind({});
+export const FlatIcon = Template.bind({});
 
 Filled.args = {
   children: 'Dropdown',
@@ -33,7 +33,7 @@ Outline.args = {
   icon: <ChevronIcon />,
 };
 
-FlagIcon.args = {
+FlatIcon.args = {
   children: 'Dropdown',
   variant: 'outline',
   size: 'md',
