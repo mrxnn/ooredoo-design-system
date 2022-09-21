@@ -20,6 +20,7 @@ export interface Props {
   icon: ReactElement;
   title: string;
   amount: string;
+  color: string;
   features: Feature[];
   className?: string;
 }
@@ -28,17 +29,18 @@ export const VoiceBundle = ({
   icon,
   title,
   amount,
+  color,
   features,
   className,
 }: Props) => {
   return (
-    <div className={`border border-primary-teal rounded-lg ${className}`}>
+    <div className={`border rounded-lg ${className}`}>
       {/* first row */}
-      <div className="flex items-center border-b border-primary-teal py-4 px-4">
-        <div className="w-10 aspect-square flex items-center justify-center bg-primary-teal rounded-md">
+      <div className="flex items-center border-b py-4 px-4">
+        <div className="w-10 aspect-square flex items-center justify-center rounded-md">
           {React.cloneElement(icon, { size: 20 })}
         </div>
-        <p className="ml-5 text-primary-teal font-semibold">{title}</p>
+        <p className="ml-5 font-semibold">{title}</p>
         <p className="ml-auto text-primary-red font-bold text-base">{amount}</p>
       </div>
       {/* second row */}
@@ -51,7 +53,7 @@ export const VoiceBundle = ({
           <p className="text-primary-red font-bold">{features[1].value}</p>
           <p>{features[1].name}</p>
         </div>
-        <Button variant="filled" className="h-8 w-28">
+        <Button variant="filled" className="px-4 py-1.5 rounded-full">
           PURCHASE
         </Button>
       </div>
