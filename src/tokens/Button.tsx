@@ -8,8 +8,8 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
 }
 
 let styles = {
-  filled: 'border-[1px] bg-primary-red text-white border-primary-cherry',
-  outline: 'border-[1px] border-primary-cherry text-primary-red',
+  filled: 'border border-primary-cherry bg-primary-red text-white',
+  outline: 'border border-primary-cherry text-primary-red',
 };
 
 export const Button = ({
@@ -21,7 +21,7 @@ export const Button = ({
 }: Props) => {
   return (
     <button
-      className={`hover:opacity-80 font-semibold uppercase disabled:bg-ash-100 flex items-center disabled:text-ash-200 disabled:border-ash-200 ${styles[variant]} ${className}`}
+      className={`hover:opacity-80 font-semibold disabled:bg-ash-100 flex items-center disabled:text-ash-200 disabled:border-ash-200 ${styles[variant]} ${className}`}
       {...props}
     >
       {icon}
