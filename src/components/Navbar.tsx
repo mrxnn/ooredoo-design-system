@@ -12,10 +12,10 @@ export interface Props {
 }
 
 export const Navbar = ({ onSearch, className, activeHref }: Props) => (
-  <nav className={`max-w-7xl space-y-10 mx-auto ${className}`}>
+  <nav className={`mx-auto max-w-7xl space-y-10 ${className}`}>
     <div className="flex h-[80px] items-end">
       <img src={logo} alt="Logo" className="-translate-y-[30%]" />
-      <ul className="flex ml-28 items-center self-stretch gap-x-5 font-medium text-[22px]">
+      <ul className="ml-28 flex items-center gap-x-5 self-stretch text-[22px] font-medium">
         <Href
           text="Personal"
           href="personal"
@@ -32,13 +32,13 @@ export const Navbar = ({ onSearch, className, activeHref }: Props) => (
           isActive={activeHref === 'about_us'}
         />
       </ul>
-      <div className="flex items-center gap-x-10 ml-auto">
+      <div className="ml-auto flex items-center gap-x-10">
         <Button
           icon={<StarIcon />}
           variant="outline"
           className="rounded-md px-3 py-2"
         >
-          <div className="flex flex-col leading-none items-start font-medium">
+          <div className="flex flex-col items-start font-medium leading-none">
             <span>My</span>
             <span>Ooredoo</span>
           </div>
@@ -53,9 +53,9 @@ export const Navbar = ({ onSearch, className, activeHref }: Props) => (
         placeholder="Find anything..."
         buttonText="Search"
         onClick={onSearch}
-        className="translate-x-4 w-[340px]"
+        className="w-[340px] translate-x-4"
       />
-      <Button variant="outline" className="px-4 ml-6 rounded-md">
+      <Button variant="outline" className="ml-6 rounded-md px-4">
         ENG
       </Button>
     </div>
@@ -73,12 +73,12 @@ const Href = ({
 }) => {
   return (
     <li
-      className={`rounded-b-md h-full flex justify-center items-end transition-colors ${
+      className={`flex h-full items-end justify-center rounded-b-md transition-colors ${
         isActive ? 'bg-primary-red text-white' : 'hover:bg-primary-cherry/10'
       }`}
     >
       <Link href={href}>
-        <a className="h-full px-4 flex justify-center items-end pb-3">{text}</a>
+        <a className="flex h-full items-end justify-center px-4 pb-3">{text}</a>
       </Link>
     </li>
   );

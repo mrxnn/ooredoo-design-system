@@ -30,7 +30,7 @@ export const Dropdown = ({
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger
-        className={`flex justify-center place-items-center text-sm leading-[17px] font-light hover:opacity-80  disabled:bg-ash-100  disabled:text-ash-200 disabled:border-ash-200 ${styles[variant]} ${sizes[size]} ${className}`}
+        className={`flex place-items-center justify-center text-sm font-light leading-[17px] hover:opacity-80  disabled:border-ash-200  disabled:bg-ash-100 disabled:text-ash-200 ${styles[variant]} ${sizes[size]} ${className}`}
       >
         {children}
         {icon}
