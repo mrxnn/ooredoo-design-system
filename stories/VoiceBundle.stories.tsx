@@ -19,6 +19,7 @@ Default.args = {
   icon: <div>🤑</div>,
   title: '2 hbeb',
   amount: '30DA',
+  color: 'red',
   features: [
     {
       name: '020 Call',

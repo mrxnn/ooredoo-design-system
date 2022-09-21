@@ -20,6 +20,7 @@ export interface Props {
   icon: ReactElement;
   title: string;
   amount: string;
+  color: 'red' | 'teal' | 'blue';
   features: Feature[];
   className?: string;
 }
@@ -28,14 +29,30 @@ export const VoiceBundle = ({
   icon,
   title,
   amount,
+  color,
   features,
   className,
 }: Props) => {
+  let colors = {
+    red: '#ED1C24',
+    teal: '#2CD5C4',
+    blue: '#0047BB',
+  };
+
   return (
-    <div className={`border rounded-lg ${className}`}>
+    <div
+      className={`border rounded-lg ${className}`}
+      style={{ borderColor: colors[color] }}
+    >
       {/* first row */}
-      <div className="flex items-center border-b py-4 px-4">
-        <div className="w-10 aspect-square flex items-center justify-center rounded-md">
+      <div
+        className="flex items-center border-b py-4 px-4"
+        style={{ borderColor: colors[color] }}
+      >
+        <div
+          className="w-10 aspect-square flex items-center justify-center rounded-md"
+          style={{ backgroundColor: colors[color] }}
+        >
           {React.cloneElement(icon, { size: 20 })}
         </div>
         <p className="ml-5 font-semibold">{title}</p>
