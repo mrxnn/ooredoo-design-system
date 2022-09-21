@@ -5,6 +5,11 @@ import { VoiceBundle, Props } from '../src/components/VoiceBundle';
 const meta: Meta = {
   title: 'components/VoiceBundle',
   component: VoiceBundle,
+  argTypes: {
+    icon: {
+      control: false,
+    },
+  },
 };
 
 export default meta;

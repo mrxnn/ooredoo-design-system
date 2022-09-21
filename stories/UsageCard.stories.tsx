@@ -5,6 +5,11 @@ import { UsageCard, Props } from '../src/components/UsageCard';
 const meta: Meta = {
   title: 'components/UsageCard',
   component: UsageCard,
+  argTypes: {
+    icon: {
+      control: false,
+    },
+  },
 };
 
 export default meta;
@@ -21,5 +26,5 @@ Default.args = {
   title: 'Maxi Internet 1000',
   description: 'Free 020 + 15min Offnet',
   extras: 'Valid till 10-10-2023',
-  titleColor: '#2ED5C5',
+  titleColor: 'blue',
 };

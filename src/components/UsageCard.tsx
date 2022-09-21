@@ -7,7 +7,7 @@ export interface Props {
   description: string;
   extras?: string;
   className?: string;
-  titleColor?: string;
+  titleColor: 'red' | 'teal' | 'blue';
 }
 
 export const UsageCard = ({
@@ -19,9 +19,15 @@ export const UsageCard = ({
   titleColor,
   className,
 }: Props) => {
+  let colors = {
+    red: '#ED1C24',
+    teal: '#2CD5C4',
+    blue: '#0047BB',
+  };
+
   return (
     <div className={`border rounded-lg px-2 py-3 cursor-pointer ${className}`}>
-      <div className="flex items-center mb-1">
+      <div className="flex items-center mb-3">
         <div className="w-10 aspect-square flex items-center justify-center">
           {React.cloneElement(icon, { size: 20 })}
         </div>
@@ -29,7 +35,7 @@ export const UsageCard = ({
         <div className="w-10 aspect-square ml-auto flex justify-center items-center font-semibold text-xl">{`>`}</div>
       </div>
       <div className="pl-10 text-sm space-y-0.5">
-        <p className="font-semibold" style={{ color: titleColor }}>
+        <p className="font-semibold" style={{ color: colors[titleColor] }}>
           {title}
         </p>
         <p className="font-semibold">{description}</p>
