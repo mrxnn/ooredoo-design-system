@@ -1,6 +1,5 @@
 import React, { HTMLAttributes, useState } from 'react';
 import * as DialogPrimitive from '@radix-ui/react-dialog';
-import { StarIcon } from '../assets/Icons';
 import { Button } from './Button';
 
 export interface Props extends HTMLAttributes<HTMLButtonElement> {
@@ -8,13 +7,29 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   className?: string;
   icon?: React.ReactElement;
+  image: string;
+  content: string;
+  subContent: string;
 }
+let styles = {
+  filled: 'border bg-primary-red text-white border-primary-red',
+  outline: 'border border-primary-cherry text-primary-red',
+};
 
-export const Modal = ({ children = 'Click' }: Props) => {
+export const Modal = ({
+  variant = 'filled',
+  children = 'Click',
+  image,
+  content,
+  subContent,
+  className,
+}: Props) => {
   let [isOpen, setIsOpen] = useState(false);
   return (
     <DialogPrimitive.Root open={isOpen} onOpenChange={setIsOpen}>
-      <DialogPrimitive.Trigger className="text-md rounded-md border border-primary-cherry bg-primary-red px-2 py-1 text-white">
+      <DialogPrimitive.Trigger
+        className={`flex items-center justify-center font-semibold hover:opacity-80 disabled:border-ash-200 disabled:bg-ash-100 disabled:text-ash-200 ${styles[variant]} ${className}`}
+      >
         {children}
       </DialogPrimitive.Trigger>
       <DialogPrimitive.Portal>
@@ -28,15 +43,16 @@ export const Modal = ({ children = 'Click' }: Props) => {
           </DialogPrimitive.Title>
           <DialogPrimitive.Description className="mt-2 text-sm font-normal text-gray-700 dark:text-gray-400">
             <span className="mt-16 flex justify-center text-primary-red">
-              <StarIcon size={72} />
+              <img src={image} alt="Image" />
             </span>
           </DialogPrimitive.Description>
-          <h1 className="mt-3.5 text-center text-base font-semibold leading-6">
-            Your account has a default
-            <br /> password
+          <h1 className="mt-3.5 whitespace-pre-line text-center text-xl font-semibold leading-6">
+            {content}
           </h1>
-          <p className="mt-1 text-center font-notosans text-base font-normal leading-6 text-ash-300"></p>
-          <div className="mt-11 flex justify-center">
+          <p className="mt-1 whitespace-pre-line text-center font-notosans text-base font-normal leading-6 text-ash-300">
+            {subContent}
+          </p>
+          <div className="mt-5 flex justify-center">
             <Button variant="filled" className="h-[36px] w-[255px] rounded-3xl">
               SET PASSWORD
             </Button>
