@@ -1,105 +1,60 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
-export interface Props extends HTMLAttributes<HTMLButtonElement> {
+export interface DropdownProps {
   variant: 'filled' | 'outline' | 'flat';
   children: React.ReactNode;
   className?: string;
-  icon?: React.ReactElement;
-  size: 'sm' | 'md' | 'lg';
+  onSelect?: any;
+  leftIcon?: React.ReactElement;
+  RightIcon?: React.ReactElement;
+  items: Array<{ id: number; name: string }>;
 }
 
-export const Dropdown = () => {
-  return (
-    <DropdownRoot>
-      <DropdownTrigger />
-      <DropdownPortal forceMount={true}>
-        <DropdownContent>
-          <DropdownMenu.Label />
-          <DropdownMenu.Item />
-
-          <DropdownMenu.Group>
-            <DropdownMenu.Item />
-          </DropdownMenu.Group>
-
-          <DropdownMenu.CheckboxItem>
-            <DropdownMenu.ItemIndicator />
-          </DropdownMenu.CheckboxItem>
-
-          <DropdownMenu.RadioGroup></DropdownMenu.RadioGroup>
-
-          <DropdownMenu.Sub>
-            <DropdownMenu.SubTrigger />
-            <DropdownMenu.Portal>
-              <DropdownMenu.SubContent />
-            </DropdownMenu.Portal>
-          </DropdownMenu.Sub>
-
-          <DropdownMenu.Separator />
-          <DropdownMenu.Arrow />
-        </DropdownContent>
-      </DropdownPortal>
-    </DropdownRoot>
-  );
+let styles = {
+  filled: 'border bg-primary-red text-white border-primary-cherry',
+  outline: 'border border-primary-cherry text-primary-red',
+  flat: 'text-primary-red',
 };
 
-interface RootProps {
-  defaultOpen?: boolean;
-  open?: boolean;
-  onOpenChange?(): void;
-  modal?: boolean;
-  dir?: 'ltr' | 'rtl';
-  children?: JSX.Element | JSX.Element[] | React.ReactNode;
-}
-
-const DropdownRoot = ({
-  defaultOpen,
-  open,
-  onOpenChange,
-  modal = true,
-  dir,
+export const Dropdown = ({
+  variant = 'filled',
   children,
-  ...props
-}: RootProps) => {
+  className,
+  leftIcon,
+  RightIcon,
+  items,
+  onSelect,
+}: DropdownProps) => {
+  // const onSelect = (data: any) => {
+  //   return console.log(data);
+  // };
+
   return (
-    <DropdownMenu.Root
-      defaultOpen={defaultOpen}
-      open={open}
-      onOpenChange={onOpenChange}
-      modal={modal}
-      dir={dir}
-      children={children}
-      {...props}
-    ></DropdownMenu.Root>
+    <DropdownMenu.Root>
+      <DropdownMenu.Trigger
+        className={`focus:outline-none hover:opacity-80 font-light disabled:bg-ash-100 flex items-center disabled:text-ash-200 disabled:border-ash-200 ${styles[variant]} ${className}`}
+      >
+        {leftIcon}
+        {children}
+        {RightIcon}
+      </DropdownMenu.Trigger>
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content
+          sideOffset={5}
+          className={`border rounded-lg w-36 space-y-1 ${styles[variant]} ${className}`}
+        >
+          {items.map((label: any) => (
+            <DropdownMenu.Item
+              key={label.id}
+              onSelect={() => onSelect(label.name)}
+              className="rounded-sm py-1 pl-1 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white"
+            >
+              {label.name}
+            </DropdownMenu.Item>
+          ))}
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
+    </DropdownMenu.Root>
   );
-};
-
-const DropdownTrigger = (props: any) => {
-  return <DropdownMenu.Trigger {...props} />;
-};
-
-interface PortalProps {
-  forceMount: true;
-  container?: HTMLElement;
-  children?: JSX.Element | JSX.Element[] | React.ReactNode;
-}
-
-const DropdownPortal = ({
-  forceMount = true,
-  container,
-  children,
-  ...props
-}: PortalProps) => {
-  return (
-    <DropdownMenu.Portal
-      forceMount={forceMount}
-      container={container}
-      children={children}
-      {...props}
-    ></DropdownMenu.Portal>
-  );
-};
-
-const DropdownContent = (props: any) => {
-  return <DropdownMenu.Content {...props}></DropdownMenu.Content>;
 };

@@ -1,41 +1,59 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Dropdown, Props } from '../src/tokens/Dropdown';
-import { ChevronIcon } from '../src/assets/Icons';
+import { Dropdown, DropdownProps } from '../src/tokens/Dropdown';
+import { ChevronIcon, StarIcon } from '../src/assets/Icons';
 
 const meta: Meta = {
   title: 'design tokens/Dropdown',
   component: Dropdown,
   argTypes: {
     onClick: { action: 'clicked' },
+    onSelect: { action: 'clicked' },
+    className: {
+      defaultValue: 'px-4 py-2 rounded-lg',
+    },
   },
 };
 
 export default meta;
 
-const Template: Story<Props> = args => <Dropdown {...args} />;
+const Template: Story<DropdownProps> = args => <Dropdown {...args} />;
 
 export const Filled = Template.bind({});
+
 export const Outline = Template.bind({});
-export const FlatIcon = Template.bind({});
+
+export const Flat = Template.bind({});
 
 Filled.args = {
-  children: 'Dropdown',
   variant: 'filled',
-  size: 'md',
-  icon: <ChevronIcon />,
+  children: 'Dropdown',
+  leftIcon: <StarIcon />,
+  RightIcon: <ChevronIcon />,
+  items: [
+    { id: 1, name: 'item 001' },
+    { id: 2, name: 'item 002' },
+  ],
 };
 
 Outline.args = {
-  children: 'Dropdown',
   variant: 'outline',
-  size: 'md',
-  icon: <ChevronIcon />,
+  children: 'Dropdown',
+  leftIcon: <StarIcon />,
+  RightIcon: <ChevronIcon />,
+  items: [
+    { id: 1, name: 'item 001' },
+    { id: 2, name: 'item 002' },
+  ],
 };
 
-FlatIcon.args = {
+Flat.args = {
+  variant: 'flat',
   children: 'Dropdown',
-  variant: 'outline',
-  size: 'md',
-  icon: <ChevronIcon />,
+  leftIcon: <StarIcon />,
+  RightIcon: <ChevronIcon />,
+  items: [
+    { id: 1, name: 'item 001' },
+    { id: 2, name: 'item 002' },
+  ],
 };
