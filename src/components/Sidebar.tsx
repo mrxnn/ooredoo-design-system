@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React, { useState } from 'react';
 import * as Collapsible from '@radix-ui/react-collapsible';
+import { ChevronDownIcon, ChevronUpIcon } from '../assets/Icons';
 
 export interface Item {
   name: string;
@@ -46,12 +47,15 @@ const SidebarItem = ({ item }: { item: Item }) => {
           <p className="font-medium uppercase transition-colors group-hover:text-black">
             {item.name}
           </p>
+          <div className="ml-auto transition-colors group-hover:text-black">
+            {open ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          </div>
         </Collapsible.Trigger>
         <Collapsible.Content className="flex flex-col space-y-2 rounded-b-lg bg-primary-red/20 pl-[72px]">
           {item.children?.map((child, index) => {
             return (
               <div
-                className={`last:pb-4 ${
+                className={`transition-colors last:pb-4 ${
                   child.isActive
                     ? 'font-bold text-primary-red'
                     : 'text-[#818181] hover:text-black'

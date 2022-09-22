@@ -20,22 +20,40 @@ export const StarIcon = ({ size = 18 }: IconProps) => (
   </svg>
 );
 
-export const ChevronIcon = ({
+export const ChevronUpIcon = ({
   size = 20,
   color = 'currentColor',
 }: IconProps) => (
   <svg
-    height={size}
+    xmlns="http://www.w3.org/2000/svg"
     width={size}
+    height={size}
+    viewBox="0 0 24 24"
     fill="none"
     stroke={color}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth="2"
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-    style={{ marginLeft: '5px' }}
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
   >
-    <path d="M6 9 12 15 18 9" />
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+);
+
+export const ChevronDownIcon = ({
+  size = 20,
+  color = 'currentColor',
+}: IconProps) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke={color}
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <polyline points="6 9 12 15 18 9"></polyline>
   </svg>
 );
