@@ -1,43 +1,58 @@
-import React, { HTMLAttributes } from 'react';
+import React from 'react';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 
-export interface Props extends HTMLAttributes<HTMLButtonElement> {
+export interface DropdownProps {
   variant: 'filled' | 'outline' | 'flat';
   children: React.ReactNode;
   className?: string;
-  icon?: React.ReactElement;
-  size: 'sm' | 'md' | 'lg';
+  onSelect?: any;
+  leftIcon?: React.ReactElement;
+  RightIcon?: React.ReactElement;
+  items: Array<{ id: number; name: string }>;
+  itemClassName: string;
 }
-let styles = {
-  filled: 'rounded-md border bg-primary-red text-white border-primary-cherry',
-  outline: 'rounded-md border border-primary-cherry text-primary-red ',
-  flat: 'border text-black border-0 ',
-};
 
-let sizes = {
-  sm: 'px-3 py-2.5',
-  md: 'w-40 h-10',
-  lg: 'w-48 h-10',
+let styles = {
+  filled: 'border bg-primary-red text-white border-primary-cherry',
+  outline: 'border border-primary-cherry text-primary-red',
+  flat: 'text-primary-red',
 };
 
 export const Dropdown = ({
   variant = 'filled',
-  size = 'md',
   children,
-  icon,
   className,
-}: Props) => {
+  leftIcon,
+  RightIcon,
+  items,
+  onSelect,
+  itemClassName,
+}: DropdownProps) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger
-        className={`flex place-items-center justify-center text-sm font-light leading-[17px] hover:opacity-80  disabled:border-ash-200  disabled:bg-ash-100 disabled:text-ash-200 ${styles[variant]} ${sizes[size]} ${className}`}
+        className={`flex items-center font-light hover:opacity-80 focus:outline-none disabled:border-ash-200 disabled:bg-ash-100 disabled:text-ash-200 ${styles[variant]} ${className}`}
       >
+        {leftIcon}
         {children}
-        {icon}
+        {RightIcon}
       </DropdownMenu.Trigger>
-      <DropdownMenu.Content>
-        <DropdownMenu.Item className="text-red-600">Item</DropdownMenu.Item>
-      </DropdownMenu.Content>
+      <DropdownMenu.Portal>
+        <DropdownMenu.Content
+          sideOffset={5}
+          className={`w-36 space-y-1 rounded-lg border ${styles[variant]} ${className}`}
+        >
+          {items.map((label: any) => (
+            <DropdownMenu.Item
+              key={label.id}
+              onSelect={() => onSelect(label.name)}
+              className={`cursor-pointer py-1 pl-1 focus:outline-none focus:ring-2 focus:ring-white ${itemClassName}`}
+            >
+              {label.name}
+            </DropdownMenu.Item>
+          ))}
+        </DropdownMenu.Content>
+      </DropdownMenu.Portal>
     </DropdownMenu.Root>
   );
 };

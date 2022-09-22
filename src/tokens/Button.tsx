@@ -8,7 +8,8 @@ export interface Props extends HTMLAttributes<HTMLButtonElement> {
 }
 
 let styles = {
-  filled: 'border border-primary-cherry bg-primary-red text-white',
+  filled: 'border bg-primary-red text-white border-primary-cherry',
+
   outline: 'border border-primary-cherry text-primary-red',
 };
 
