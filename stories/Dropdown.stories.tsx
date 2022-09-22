@@ -12,6 +12,15 @@ const meta: Meta = {
     className: {
       defaultValue: 'px-4 py-2 rounded-lg',
     },
+    items: {
+      defaultValue: [
+        { id: 1, name: 'item 001' },
+        { id: 2, name: 'item 002' },
+      ],
+    },
+    itemClassName: {
+      defaultValue: 'rounded-sm',
+    },
   },
 };
 
@@ -30,10 +39,6 @@ Filled.args = {
   children: 'Dropdown',
   leftIcon: <StarIcon />,
   RightIcon: <ChevronDownIcon />,
-  items: [
-    { id: 1, name: 'item 001' },
-    { id: 2, name: 'item 002' },
-  ],
 };
 
 Outline.args = {
@@ -41,10 +46,6 @@ Outline.args = {
   children: 'Dropdown',
   leftIcon: <StarIcon />,
   RightIcon: <ChevronDownIcon />,
-  items: [
-    { id: 1, name: 'item 001' },
-    { id: 2, name: 'item 002' },
-  ],
 };
 
 Flat.args = {
@@ -52,8 +53,4 @@ Flat.args = {
   children: 'Dropdown',
   leftIcon: <StarIcon />,
   RightIcon: <ChevronDownIcon />,
-  items: [
-    { id: 1, name: 'item 001' },
-    { id: 2, name: 'item 002' },
-  ],
 };
