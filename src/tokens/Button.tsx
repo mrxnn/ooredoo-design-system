@@ -21,7 +21,7 @@ export const Button = ({
 }: Props) => {
   return (
     <button
-      className={`flex items-center font-semibold hover:opacity-80 disabled:border-ash-200 disabled:bg-ash-100 disabled:text-ash-200 ${styles[variant]} ${className}`}
+      className={`flex items-center justify-center font-semibold hover:opacity-80 disabled:border-ash-200 disabled:bg-ash-100 disabled:text-ash-200 ${styles[variant]} ${className}`}
       {...props}
     >
       {icon}
