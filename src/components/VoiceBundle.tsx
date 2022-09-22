@@ -41,7 +41,7 @@ export const VoiceBundle = ({
 
   return (
     <div
-      className={`border rounded-lg ${className}`}
+      className={`rounded-lg border ${className}`}
       style={{ borderColor: colors[color] }}
     >
       {/* first row */}
@@ -50,25 +50,27 @@ export const VoiceBundle = ({
         style={{ borderColor: colors[color] }}
       >
         <div
-          className="w-10 aspect-square flex items-center justify-center rounded-md"
+          className="flex aspect-square w-10 items-center justify-center rounded-md"
           style={{ backgroundColor: colors[color] }}
         >
           {React.cloneElement(icon, { size: 20 })}
         </div>
-        <p className="ml-5 font-semibold">{title}</p>
-        <p className="ml-auto text-primary-red font-bold text-base">{amount}</p>
+        <p className="ml-5 font-semibold" style={{ color: colors[color] }}>
+          {title}
+        </p>
+        <p className="ml-auto text-base font-bold text-primary-red">{amount}</p>
       </div>
       {/* second row */}
       <div className="flex items-center justify-between py-6 px-4">
         <div>
-          <p className="text-primary-red font-bold">{features[0].value}</p>
+          <p className="font-bold text-primary-red">{features[0].value}</p>
           <p>{features[0].name}</p>
         </div>
         <div>
-          <p className="text-primary-red font-bold">{features[1].value}</p>
+          <p className="font-bold text-primary-red">{features[1].value}</p>
           <p>{features[1].name}</p>
         </div>
-        <Button variant="filled" className="px-4 py-1.5 rounded-full">
+        <Button variant="filled" className="rounded-full px-4 py-1.5">
           PURCHASE
         </Button>
       </div>
