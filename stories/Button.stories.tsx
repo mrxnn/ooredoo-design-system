@@ -35,7 +35,7 @@ Outline.args = {
 
 Icon.args = {
   variant: 'outline',
-  children: 'Button',
+  children: 'BUTTON',
   icon: <StarIcon />,
 };
 

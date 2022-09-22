@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { Dropdown, DropdownProps } from '../src/tokens/Dropdown';
-import { ChevronIcon, StarIcon } from '../src/assets/Icons';
+import { ChevronDownIcon, StarIcon } from '../src/assets/Icons';
 
 const meta: Meta = {
   title: 'design tokens/Dropdown',
@@ -29,7 +29,7 @@ Filled.args = {
   variant: 'filled',
   children: 'Dropdown',
   leftIcon: <StarIcon />,
-  RightIcon: <ChevronIcon />,
+  RightIcon: <ChevronDownIcon />,
   items: [
     { id: 1, name: 'item 001' },
     { id: 2, name: 'item 002' },
@@ -40,7 +40,7 @@ Outline.args = {
   variant: 'outline',
   children: 'Dropdown',
   leftIcon: <StarIcon />,
-  RightIcon: <ChevronIcon />,
+  RightIcon: <ChevronDownIcon />,
   items: [
     { id: 1, name: 'item 001' },
     { id: 2, name: 'item 002' },
@@ -51,7 +51,7 @@ Flat.args = {
   variant: 'flat',
   children: 'Dropdown',
   leftIcon: <StarIcon />,
-  RightIcon: <ChevronIcon />,
+  RightIcon: <ChevronDownIcon />,
   items: [
     { id: 1, name: 'item 001' },
     { id: 2, name: 'item 002' },

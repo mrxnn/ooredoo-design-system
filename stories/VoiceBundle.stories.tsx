@@ -5,6 +5,11 @@ import { VoiceBundle, Props } from '../src/components/VoiceBundle';
 const meta: Meta = {
   title: 'components/VoiceBundle',
   component: VoiceBundle,
+  argTypes: {
+    icon: {
+      control: false,
+    },
+  },
 };
 
 export default meta;
@@ -19,6 +24,7 @@ Default.args = {
   icon: <div>🤑</div>,
   title: '2 hbeb',
   amount: '30DA',
+  color: 'red',
   features: [
     {
       name: '020 Call',

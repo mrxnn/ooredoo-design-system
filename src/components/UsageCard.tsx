@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { ChevronRightIcon } from '../assets/Icons';
 
 export interface Props {
   icon: ReactElement;
@@ -7,7 +8,7 @@ export interface Props {
   description: string;
   extras?: string;
   className?: string;
-  titleColor?: string;
+  titleColor: 'red' | 'teal' | 'blue';
 }
 
 export const UsageCard = ({
@@ -19,24 +20,34 @@ export const UsageCard = ({
   titleColor,
   className,
 }: Props) => {
+  let colors = {
+    red: '#ED1C24',
+    teal: '#2CD5C4',
+    blue: '#0047BB',
+  };
+
   return (
-    <div className={`border rounded-lg px-2 py-3 cursor-pointer ${className}`}>
-      <div className="flex items-center mb-1">
-        <div className="w-10 aspect-square flex items-center justify-center">
-          {React.cloneElement(icon, { size: 20 })}
+    <div
+      className={`cursor-pointer rounded-lg border px-3 pb-2 pt-4 ${className}`}
+    >
+      <div className="mb-3 flex items-center">
+        <div className="mr-3 flex aspect-square w-10 items-center justify-center">
+          {icon}
         </div>
         <p className="text-xl">{type}</p>
-        <div className="w-10 aspect-square ml-auto flex justify-center items-center font-semibold text-xl">{`>`}</div>
+        <div className="ml-auto">
+          <ChevronRightIcon size={24} />
+        </div>
       </div>
-      <div className="pl-10 text-sm space-y-0.5">
-        <p className="font-semibold" style={{ color: titleColor }}>
+      <div className="space-y-0.5 pl-[53.5px] text-sm">
+        <p className="font-semibold" style={{ color: colors[titleColor] }}>
           {title}
         </p>
         <p className="font-semibold">{description}</p>
       </div>
-      <div className="text-right pr-3 mt-1">
-        <p className="text-[10px] opacity-90">{extras}</p>
-      </div>
+      <p className="w-full -translate-x-2 text-right text-[10px] opacity-90">
+        {extras}
+      </p>
     </div>
   );
 };
