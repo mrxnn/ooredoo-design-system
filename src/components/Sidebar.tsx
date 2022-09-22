@@ -17,7 +17,7 @@ export interface Props {
 
 export const Sidebar = ({ items }: Props) => {
   return (
-    <div className="w-64 bg-[#F9F9F9B2] px-[10px] py-4">
+    <div className="w-[264px] bg-[#F9F9F9B2] px-[10px] py-4">
       {items?.map((item, index) => {
         return <SidebarItem item={item} key={index} />;
       })}
@@ -37,8 +37,8 @@ const SidebarItem = ({ item }: { item: Item }) => {
             open ? 'rounded-t-lg' : 'rounded-lg'
           } ${
             item.isActive || open
-              ? ' bg-primary-red/20 text-black'
-              : ' text-[#818181]'
+              ? 'bg-primary-red/20 text-black'
+              : 'bg-white text-[#818181]'
           }`}
         >
           <div className="mr-5 flex aspect-square w-7 items-center justify-center rounded-full bg-primary-red">
