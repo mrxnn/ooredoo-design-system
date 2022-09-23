@@ -6,11 +6,11 @@ export interface Props {
   progress?: number;
 }
 
-export const Progress = ({ progress }: Props) => {
+export const Progress = ({ progress, className }: Props) => {
   return (
     <ProgressPrimitive.Root
       value={progress}
-      className="h-3 w-80 overflow-hidden rounded-full border border-primary-cherry bg-white dark:bg-gray-900"
+      className={`overflow-hidden  ${className}`}
     >
       <ProgressPrimitive.Indicator
         style={{ width: `${progress}%` }}

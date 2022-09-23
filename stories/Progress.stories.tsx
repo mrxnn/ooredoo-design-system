@@ -5,7 +5,12 @@ import { Progress, Props } from '../src/tokens/Progress';
 const meta: Meta = {
   title: 'design tokens/Progress',
   component: Progress,
-  argTypes: {},
+  argTypes: {
+    className: {
+      defaultValue:
+        'h-3 w-80 rounded-full border border-primary-cherry dark:bg-gray-900',
+    },
+  },
 };
 
 export default meta;
