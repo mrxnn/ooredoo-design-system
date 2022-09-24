@@ -7,8 +7,7 @@ const meta: Meta = {
   component: Progress,
   argTypes: {
     className: {
-      defaultValue:
-        'h-3 w-80 rounded-full border border-primary-cherry dark:bg-gray-900',
+      defaultValue: 'bg-primary-blue',
     },
   },
 };

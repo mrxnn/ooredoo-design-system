@@ -10,3 +10,14 @@
     @apply text-sm;
   }
 }
+
+.switch-root[data-state='checked'] {
+  background-color: #ed1c24;
+  border-radius: 15px;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.switch-root[data-state='unchecked'] {
+  background: #e0e0e0;
+  border-radius: 15px;
+}
