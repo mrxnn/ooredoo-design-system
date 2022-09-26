@@ -2,6 +2,8 @@
 export { Button } from './tokens/Button';
 export { Dropdown } from './tokens/Dropdown';
 export { Modal } from './tokens/Modal';
+export { Progress } from './tokens/Progress';
+export { Switch } from './tokens/Switch';
 
 // Components
 export { SearchBox } from './components/SearchBox';
