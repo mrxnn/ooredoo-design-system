@@ -26,7 +26,7 @@ Filled.args = {
   variant: 'filled',
   children: 'Modal',
   image: img,
-  content: `${`Your account has a default\npassword`}`,
+  content: 'Your account has a default\npassword',
   subContent: 'Please set a new password to continue.',
 };
 

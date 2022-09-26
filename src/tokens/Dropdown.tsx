@@ -5,7 +5,7 @@ export interface DropdownProps {
   variant: 'filled' | 'outline' | 'flat';
   children: React.ReactNode;
   className?: string;
-  onSelect?: any;
+  onSelect?: (event: Event) => void;
   leftIcon?: React.ReactElement;
   RightIcon?: React.ReactElement;
   items: Array<{ id: number; name: string }>;
@@ -42,15 +42,18 @@ export const Dropdown = ({
           sideOffset={5}
           className={`w-36 space-y-1 rounded-lg border ${styles[variant]} ${className}`}
         >
-          {items.map((label: any) => (
-            <DropdownMenu.Item
-              key={label.id}
-              onSelect={() => onSelect(label.name)}
-              className={`cursor-pointer py-1 pl-1 focus:outline-none focus:ring-2 focus:ring-white ${itemClassName}`}
-            >
-              {label.name}
-            </DropdownMenu.Item>
-          ))}
+          <DropdownMenu.Group>
+            {items.map((label: any) => (
+              <DropdownMenu.Item
+                textValue={label.name}
+                key={label.id}
+                onSelect={onSelect}
+                className={`cursor-pointer py-1 pl-1 focus:outline-none focus:ring-2 focus:ring-white ${itemClassName}`}
+              >
+                {label.name}
+              </DropdownMenu.Item>
+            ))}
+          </DropdownMenu.Group>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
