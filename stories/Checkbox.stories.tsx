@@ -15,6 +15,12 @@ const meta: Meta = {
     className: {
       defaultValue: '',
     },
+    items: {
+      defaultValue: [
+        { id: '1', title: 'Notification on Lock Screen', check: true },
+        { id: '2', title: 'Banner on Springboard', check: true },
+      ],
+    },
   },
 };
 
