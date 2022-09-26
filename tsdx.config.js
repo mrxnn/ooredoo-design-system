@@ -1,12 +1,12 @@
-let static_files = require('rollup-plugin-static-files');
+const images = require('@rollup/plugin-image');
 
 module.exports = {
-  rollup(config) {
-    config.plugins.push(
-      static_files({
-        include: ['./static'],
-      })
-    );
+  rollup(config, options) {
+    config.plugins = [
+      images({ include: ['**/*.png', '**/*.jpg'] }),
+      ...config.plugins,
+    ];
+
     return config;
   },
 };
