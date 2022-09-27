@@ -35,7 +35,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "ooredoo-design-system",
+  "name": "@mayurarx/ooredoo-design-system",
   "author": "Mayura",
   "module": "dist/ooredoo-design-system.esm.js",
   "size-limit": [
