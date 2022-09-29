@@ -24,6 +24,9 @@ module.exports = {
         ash: { 100: '#CFCFCF', 200: '#EEEEEE', 300: '#AAAAAA' },
         rose: '#FF585D',
         grey: '#221E20',
+        black: {
+          100: '#221E20',
+        },
       },
     },
   },
