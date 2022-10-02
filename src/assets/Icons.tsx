@@ -77,7 +77,7 @@ export const ChevronRightIcon = ({
   </svg>
 );
 
-export const CheckIcon = ({ size = 10 }: IconProps) => (
+export const CheckIcon = ({ size = 10, color = 'currentColor' }: IconProps) => (
   <svg
     width={size}
     height={size}
@@ -89,7 +89,7 @@ export const CheckIcon = ({ size = 10 }: IconProps) => (
       fillRule="evenodd"
       clipRule="evenodd"
       d="M9.72353 1.69213L3.99981 7.70935C3.63118 8.09688 3.03439 8.09688 2.6667 7.70935L0.275768 5.1968C-0.0919226 4.80927 -0.0919226 4.18187 0.275768 3.79434C0.644401 3.40779 1.24119 3.40779 1.60888 3.79434L3.33325 5.60714L8.39041 0.290652C8.7581 -0.0968841 9.35489 -0.0968841 9.72353 0.290652C10.0922 0.677198 10.0922 1.30459 9.72353 1.69213Z"
-      fill="white"
+      fill={color}
     />
   </svg>
 );
