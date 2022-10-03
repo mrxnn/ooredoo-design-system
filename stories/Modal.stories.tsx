@@ -52,21 +52,4 @@ export default meta;
 
 const Template: Story<Props> = (args) => <Modal {...args} />;
 
-export const Filled = Template.bind({});
-export const Outline = Template.bind({});
-
-Filled.args = {
-  variant: 'filled',
-  children: 'Modal',
-  image: img,
-  content: 'Your account has a default\npassword',
-  subContent: 'Please set a new password to continue.',
-};
-
-Outline.args = {
-  variant: 'outline',
-  children: 'Modal',
-  image: img,
-  content: `${`Your account has a default\npassword`}`,
-  subContent: 'Please set a new password to continue.',
-};
+export const Default = Template.bind({});
