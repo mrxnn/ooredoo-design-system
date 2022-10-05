@@ -30,6 +30,7 @@ export const Button = ({
     >
       {icon && <div className="-translate-y-[1.5px]">{icon}</div>}
       <span
+        className="flex items-center"
         style={{
           lineHeight: '1em',
           transform: `translateY(${opticalTestMultiplier}px)`,

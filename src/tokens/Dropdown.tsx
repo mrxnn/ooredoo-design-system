@@ -43,16 +43,17 @@ export const Dropdown = ({
           className={`w-36 space-y-1 rounded-lg border ${styles[variant]} ${className}`}
         >
           <DropdownMenu.Group>
-            {items.map((label: any) => (
-              <DropdownMenu.Item
-                textValue={label.name}
-                key={label.id}
-                onSelect={onSelect}
-                className={`cursor-pointer py-1 pl-1 focus:outline-none focus:ring-2 focus:ring-white ${itemClassName}`}
-              >
-                {label.name}
-              </DropdownMenu.Item>
-            ))}
+            {items &&
+              items.map((label: any) => (
+                <DropdownMenu.Item
+                  textValue={label.name}
+                  key={label.id}
+                  onSelect={onSelect}
+                  className={`cursor-pointer py-1 pl-1 focus:outline-none focus:ring-2 focus:ring-white ${itemClassName}`}
+                >
+                  {label.name}
+                </DropdownMenu.Item>
+              ))}
           </DropdownMenu.Group>
         </DropdownMenu.Content>
       </DropdownMenu.Portal>

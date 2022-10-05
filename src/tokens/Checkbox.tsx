@@ -34,7 +34,7 @@ export const Checkbox = ({
               {...props}
             >
               <CheckboxPrimitive.Indicator>
-                <CheckIcon />
+                <CheckIcon color="white" />
               </CheckboxPrimitive.Indicator>
             </CheckboxPrimitive.Root>
 
